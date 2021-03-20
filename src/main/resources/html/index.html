@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Check Payment Form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/3.1.1/jquery.serializejson.min.js" crossorigin="anonymous"></script>
+   
+    
+    </head>
+    <body>
+        <form method="post" id="ajaxform">
+            <label for="companyCode">Company Code:</label><br>
+            <input type="number" id="companyCode" name="companyCode"><br>
+
+            <label for="serviceCode">Service Code:</label><br>
+            <input type="number" id="serviceCode" name="serviceCode"><br>
+
+            <label for="account">Account:</label><br>
+            <input type="text" id="account" name="account"><br>
+
+            <label for="special1">Special1:</label><br>
+            <input type="text" id="special1" name="special1"><br>
+
+            <label for="special2">Special2:</label><br>
+            <input type="text" id="special2" name="special2"><br>
+
+            <label for="transactionDate">Transaction Date:</label><br>
+            <input type="text" id="transactionDate" name="transactionDate"><br>
+
+            <label for="transactinoId">Transaction Id:</label><br>
+            <input type="text" id="transactionId" name="transactionId"><br>
+
+            <label for="userId">User Id:</label><br>
+            <input type="text" id="userId" name="userId"><br>
+
+            <label for="userPassword">User Password:</label><br>
+            <input type="text" id="userPassword" name="userPassword"><br>
+
+            <label for="salePointType">Sale Point Type:</label><br>
+            <input type="number" id="salePointType" name="salePointType"><br>
+
+            <p>
+                <br />
+                <input type="button" value="Submit"  id="simplepost"/>
+            </p>
+    </body>
+
+
+    <script>
+        
+  $.fn.serializeObject = function ()
+        {
+            var o = {};
+            var a = this.serializeArray();
+            $.each(a, function () {
+                if (o[this.name]) {
+                    if (!o[this.name].push) {
+                        o[this.name] = [o[this.name]];
+                    }
+                    o[this.name].push(this.value || '');
+                } else {
+                    o[this.name] = this.value || '';
+                }
+            });
+            return o;
+        };
+
+        $(document).ready(function () {
+            $("#simplepost").click(function (e) {
+                var data = $('#ajaxform').serializeObject();
+                console.log(data);
+                $.ajax({
+                    type: 'POST',
+                    url: '/checkPayment',
+                    contentType: "application/json",
+                    dataType: 'html',
+                    data: JSON.stringify(data),
+                    success: function (response) {
+//                        localStorage.setItem('response', response);
+//                        localStorage.setItem('data', JSON.stringify(data));
+//                        window.location.href = "m";
+                    console.log(response);
+                    var output=document.getElementById('output');
+                    output.innerHTML=response;
+                    
+                    },
+                    error: function (request, textStatus, errorThrown) {
+                        alert("error " + errorThrown);
+                    }
+                });
+            });
+        }
+        );
+    </script>
+
+</html>

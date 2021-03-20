@@ -1,0 +1,1404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CheckPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="companyCode" type="s:unsignedShort" />
+            <s:element minOccurs="1" maxOccurs="1" name="serviceCode" type="s:unsignedShort" />
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="special1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="special2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="transactionDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transactionId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="salePointType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckPaymentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecutePayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="companyCode" type="s:unsignedShort" />
+            <s:element minOccurs="1" maxOccurs="1" name="serviceCode" type="s:unsignedShort" />
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="special1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="special2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="transactionDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transactionId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="refStan" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="billNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="salePointType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecutePaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecutePaymentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecutePaymentEx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="companyCode" type="s:unsignedShort" />
+            <s:element minOccurs="1" maxOccurs="1" name="serviceCode" type="s:unsignedShort" />
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="special1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="special2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="transactionDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transactionId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="refStan" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="billNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="salePointType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="paySourceType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="currencyCode" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecutePaymentExResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecutePaymentExResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCancelRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="companyCode" type="s:unsignedShort" />
+            <s:element minOccurs="1" maxOccurs="1" name="refStan" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="transactionDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transactionId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="salePointType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCancelRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddCancelRequestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCancelRequestEx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="companyCode" type="s:unsignedShort" />
+            <s:element minOccurs="1" maxOccurs="1" name="refStan" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="transactionDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transactionId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="salePointType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="note" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCancelRequestExResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddCancelRequestExResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompanyInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="companyCode" type="s:unsignedShort" />
+            <s:element minOccurs="1" maxOccurs="1" name="serviceCode" type="s:unsignedShort" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="salePointType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompanyInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCompanyInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dealerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="refStan" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="salePointType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransactionReportResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionReportSummary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dealerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="refStan" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="salePointType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionReportSummaryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransactionReportSummaryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="stan" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="refStan" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="billNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransactionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionEx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="stan" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="refStan" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="billNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionExResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransactionExResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionByExternal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="stanEx" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionByExternalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransactionByExternalResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DailyReconciliation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dealerId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="companyId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="day" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalSum" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalCount" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DailyReconciliationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DailyReconciliationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Retransmit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="companyCode" type="s:unsignedShort" />
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="transactionDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transactionId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="refStan" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="salePointType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="note" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetransmitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetransmitResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CheckPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckPayment" />
+  </wsdl:message>
+  <wsdl:message name="CheckPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecutePaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecutePayment" />
+  </wsdl:message>
+  <wsdl:message name="ExecutePaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecutePaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecutePaymentExSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecutePaymentEx" />
+  </wsdl:message>
+  <wsdl:message name="ExecutePaymentExSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecutePaymentExResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddCancelRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:AddCancelRequest" />
+  </wsdl:message>
+  <wsdl:message name="AddCancelRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:AddCancelRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddCancelRequestExSoapIn">
+    <wsdl:part name="parameters" element="tns:AddCancelRequestEx" />
+  </wsdl:message>
+  <wsdl:message name="AddCancelRequestExSoapOut">
+    <wsdl:part name="parameters" element="tns:AddCancelRequestExResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanyInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCompanyInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanyInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCompanyInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionReportSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransactionReport" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionReportSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransactionReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionReportSummarySoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransactionReportSummary" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionReportSummarySoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransactionReportSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransaction" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionExSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransactionEx" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionExSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransactionExResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionByExternalSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransactionByExternal" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionByExternalSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransactionByExternalResponse" />
+  </wsdl:message>
+  <wsdl:message name="DailyReconciliationSoapIn">
+    <wsdl:part name="parameters" element="tns:DailyReconciliation" />
+  </wsdl:message>
+  <wsdl:message name="DailyReconciliationSoapOut">
+    <wsdl:part name="parameters" element="tns:DailyReconciliationResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetransmitSoapIn">
+    <wsdl:part name="parameters" element="tns:Retransmit" />
+  </wsdl:message>
+  <wsdl:message name="RetransmitSoapOut">
+    <wsdl:part name="parameters" element="tns:RetransmitResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckPaymentHttpGetIn">
+    <wsdl:part name="companyCode" type="s:string" />
+    <wsdl:part name="serviceCode" type="s:string" />
+    <wsdl:part name="account" type="s:string" />
+    <wsdl:part name="special1" type="s:string" />
+    <wsdl:part name="special2" type="s:string" />
+    <wsdl:part name="transactionDate" type="s:string" />
+    <wsdl:part name="transactionId" type="s:string" />
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="userPassword" type="s:string" />
+    <wsdl:part name="salePointType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckPaymentHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecutePaymentHttpGetIn">
+    <wsdl:part name="companyCode" type="s:string" />
+    <wsdl:part name="serviceCode" type="s:string" />
+    <wsdl:part name="account" type="s:string" />
+    <wsdl:part name="special1" type="s:string" />
+    <wsdl:part name="special2" type="s:string" />
+    <wsdl:part name="transactionDate" type="s:string" />
+    <wsdl:part name="transactionId" type="s:string" />
+    <wsdl:part name="refStan" type="s:string" />
+    <wsdl:part name="amount" type="s:string" />
+    <wsdl:part name="billNumber" type="s:string" />
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="userPassword" type="s:string" />
+    <wsdl:part name="salePointType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecutePaymentHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecutePaymentExHttpGetIn">
+    <wsdl:part name="companyCode" type="s:string" />
+    <wsdl:part name="serviceCode" type="s:string" />
+    <wsdl:part name="account" type="s:string" />
+    <wsdl:part name="special1" type="s:string" />
+    <wsdl:part name="special2" type="s:string" />
+    <wsdl:part name="transactionDate" type="s:string" />
+    <wsdl:part name="transactionId" type="s:string" />
+    <wsdl:part name="refStan" type="s:string" />
+    <wsdl:part name="amount" type="s:string" />
+    <wsdl:part name="billNumber" type="s:string" />
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="userPassword" type="s:string" />
+    <wsdl:part name="salePointType" type="s:string" />
+    <wsdl:part name="paySourceType" type="s:string" />
+    <wsdl:part name="currencyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecutePaymentExHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AddCancelRequestHttpGetIn">
+    <wsdl:part name="companyCode" type="s:string" />
+    <wsdl:part name="refStan" type="s:string" />
+    <wsdl:part name="transactionDate" type="s:string" />
+    <wsdl:part name="transactionId" type="s:string" />
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="userPassword" type="s:string" />
+    <wsdl:part name="salePointType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddCancelRequestHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AddCancelRequestExHttpGetIn">
+    <wsdl:part name="companyCode" type="s:string" />
+    <wsdl:part name="refStan" type="s:string" />
+    <wsdl:part name="transactionDate" type="s:string" />
+    <wsdl:part name="transactionId" type="s:string" />
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="userPassword" type="s:string" />
+    <wsdl:part name="salePointType" type="s:string" />
+    <wsdl:part name="note" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddCancelRequestExHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanyInfoHttpGetIn">
+    <wsdl:part name="companyCode" type="s:string" />
+    <wsdl:part name="serviceCode" type="s:string" />
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="userPassword" type="s:string" />
+    <wsdl:part name="salePointType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanyInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionReportHttpGetIn">
+    <wsdl:part name="userLogin" type="s:string" />
+    <wsdl:part name="userPassword" type="s:string" />
+    <wsdl:part name="dealerName" type="s:string" />
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="startDate" type="s:string" />
+    <wsdl:part name="endDate" type="s:string" />
+    <wsdl:part name="refStan" type="s:string" />
+    <wsdl:part name="salePointType" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionReportHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionReportSummaryHttpGetIn">
+    <wsdl:part name="userLogin" type="s:string" />
+    <wsdl:part name="userPassword" type="s:string" />
+    <wsdl:part name="dealerName" type="s:string" />
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="startDate" type="s:string" />
+    <wsdl:part name="endDate" type="s:string" />
+    <wsdl:part name="refStan" type="s:string" />
+    <wsdl:part name="salePointType" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionReportSummaryHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionHttpGetIn">
+    <wsdl:part name="userLogin" type="s:string" />
+    <wsdl:part name="userPassword" type="s:string" />
+    <wsdl:part name="stan" type="s:string" />
+    <wsdl:part name="refStan" type="s:string" />
+    <wsdl:part name="key" type="s:string" />
+    <wsdl:part name="billNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionExHttpGetIn">
+    <wsdl:part name="userLogin" type="s:string" />
+    <wsdl:part name="userPassword" type="s:string" />
+    <wsdl:part name="stan" type="s:string" />
+    <wsdl:part name="refStan" type="s:string" />
+    <wsdl:part name="key" type="s:string" />
+    <wsdl:part name="billNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionExHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionByExternalHttpGetIn">
+    <wsdl:part name="userLogin" type="s:string" />
+    <wsdl:part name="userPassword" type="s:string" />
+    <wsdl:part name="stanEx" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionByExternalHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DailyReconciliationHttpGetIn">
+    <wsdl:part name="userLogin" type="s:string" />
+    <wsdl:part name="userPassword" type="s:string" />
+    <wsdl:part name="dealerId" type="s:string" />
+    <wsdl:part name="companyId" type="s:string" />
+    <wsdl:part name="day" type="s:string" />
+    <wsdl:part name="totalSum" type="s:string" />
+    <wsdl:part name="totalCount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DailyReconciliationHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="RetransmitHttpGetIn">
+    <wsdl:part name="companyCode" type="s:string" />
+    <wsdl:part name="account" type="s:string" />
+    <wsdl:part name="transactionDate" type="s:string" />
+    <wsdl:part name="transactionId" type="s:string" />
+    <wsdl:part name="refStan" type="s:string" />
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="userPassword" type="s:string" />
+    <wsdl:part name="salePointType" type="s:string" />
+    <wsdl:part name="note" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RetransmitHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckPaymentHttpPostIn">
+    <wsdl:part name="companyCode" type="s:string" />
+    <wsdl:part name="serviceCode" type="s:string" />
+    <wsdl:part name="account" type="s:string" />
+    <wsdl:part name="special1" type="s:string" />
+    <wsdl:part name="special2" type="s:string" />
+    <wsdl:part name="transactionDate" type="s:string" />
+    <wsdl:part name="transactionId" type="s:string" />
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="userPassword" type="s:string" />
+    <wsdl:part name="salePointType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckPaymentHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecutePaymentHttpPostIn">
+    <wsdl:part name="companyCode" type="s:string" />
+    <wsdl:part name="serviceCode" type="s:string" />
+    <wsdl:part name="account" type="s:string" />
+    <wsdl:part name="special1" type="s:string" />
+    <wsdl:part name="special2" type="s:string" />
+    <wsdl:part name="transactionDate" type="s:string" />
+    <wsdl:part name="transactionId" type="s:string" />
+    <wsdl:part name="refStan" type="s:string" />
+    <wsdl:part name="amount" type="s:string" />
+    <wsdl:part name="billNumber" type="s:string" />
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="userPassword" type="s:string" />
+    <wsdl:part name="salePointType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecutePaymentHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecutePaymentExHttpPostIn">
+    <wsdl:part name="companyCode" type="s:string" />
+    <wsdl:part name="serviceCode" type="s:string" />
+    <wsdl:part name="account" type="s:string" />
+    <wsdl:part name="special1" type="s:string" />
+    <wsdl:part name="special2" type="s:string" />
+    <wsdl:part name="transactionDate" type="s:string" />
+    <wsdl:part name="transactionId" type="s:string" />
+    <wsdl:part name="refStan" type="s:string" />
+    <wsdl:part name="amount" type="s:string" />
+    <wsdl:part name="billNumber" type="s:string" />
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="userPassword" type="s:string" />
+    <wsdl:part name="salePointType" type="s:string" />
+    <wsdl:part name="paySourceType" type="s:string" />
+    <wsdl:part name="currencyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecutePaymentExHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AddCancelRequestHttpPostIn">
+    <wsdl:part name="companyCode" type="s:string" />
+    <wsdl:part name="refStan" type="s:string" />
+    <wsdl:part name="transactionDate" type="s:string" />
+    <wsdl:part name="transactionId" type="s:string" />
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="userPassword" type="s:string" />
+    <wsdl:part name="salePointType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddCancelRequestHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AddCancelRequestExHttpPostIn">
+    <wsdl:part name="companyCode" type="s:string" />
+    <wsdl:part name="refStan" type="s:string" />
+    <wsdl:part name="transactionDate" type="s:string" />
+    <wsdl:part name="transactionId" type="s:string" />
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="userPassword" type="s:string" />
+    <wsdl:part name="salePointType" type="s:string" />
+    <wsdl:part name="note" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddCancelRequestExHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanyInfoHttpPostIn">
+    <wsdl:part name="companyCode" type="s:string" />
+    <wsdl:part name="serviceCode" type="s:string" />
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="userPassword" type="s:string" />
+    <wsdl:part name="salePointType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanyInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionReportHttpPostIn">
+    <wsdl:part name="userLogin" type="s:string" />
+    <wsdl:part name="userPassword" type="s:string" />
+    <wsdl:part name="dealerName" type="s:string" />
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="startDate" type="s:string" />
+    <wsdl:part name="endDate" type="s:string" />
+    <wsdl:part name="refStan" type="s:string" />
+    <wsdl:part name="salePointType" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionReportHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionReportSummaryHttpPostIn">
+    <wsdl:part name="userLogin" type="s:string" />
+    <wsdl:part name="userPassword" type="s:string" />
+    <wsdl:part name="dealerName" type="s:string" />
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="startDate" type="s:string" />
+    <wsdl:part name="endDate" type="s:string" />
+    <wsdl:part name="refStan" type="s:string" />
+    <wsdl:part name="salePointType" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionReportSummaryHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionHttpPostIn">
+    <wsdl:part name="userLogin" type="s:string" />
+    <wsdl:part name="userPassword" type="s:string" />
+    <wsdl:part name="stan" type="s:string" />
+    <wsdl:part name="refStan" type="s:string" />
+    <wsdl:part name="key" type="s:string" />
+    <wsdl:part name="billNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionExHttpPostIn">
+    <wsdl:part name="userLogin" type="s:string" />
+    <wsdl:part name="userPassword" type="s:string" />
+    <wsdl:part name="stan" type="s:string" />
+    <wsdl:part name="refStan" type="s:string" />
+    <wsdl:part name="key" type="s:string" />
+    <wsdl:part name="billNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionExHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionByExternalHttpPostIn">
+    <wsdl:part name="userLogin" type="s:string" />
+    <wsdl:part name="userPassword" type="s:string" />
+    <wsdl:part name="stanEx" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionByExternalHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DailyReconciliationHttpPostIn">
+    <wsdl:part name="userLogin" type="s:string" />
+    <wsdl:part name="userPassword" type="s:string" />
+    <wsdl:part name="dealerId" type="s:string" />
+    <wsdl:part name="companyId" type="s:string" />
+    <wsdl:part name="day" type="s:string" />
+    <wsdl:part name="totalSum" type="s:string" />
+    <wsdl:part name="totalCount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DailyReconciliationHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="RetransmitHttpPostIn">
+    <wsdl:part name="companyCode" type="s:string" />
+    <wsdl:part name="account" type="s:string" />
+    <wsdl:part name="transactionDate" type="s:string" />
+    <wsdl:part name="transactionId" type="s:string" />
+    <wsdl:part name="refStan" type="s:string" />
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="userPassword" type="s:string" />
+    <wsdl:part name="salePointType" type="s:string" />
+    <wsdl:part name="note" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RetransmitHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="OperationsSoap">
+    <wsdl:operation name="CheckPayment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Check Your account</wsdl:documentation>
+      <wsdl:input message="tns:CheckPaymentSoapIn" />
+      <wsdl:output message="tns:CheckPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecutePayment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Top up Your account</wsdl:documentation>
+      <wsdl:input message="tns:ExecutePaymentSoapIn" />
+      <wsdl:output message="tns:ExecutePaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecutePaymentEx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Top up Your account</wsdl:documentation>
+      <wsdl:input message="tns:ExecutePaymentExSoapIn" />
+      <wsdl:output message="tns:ExecutePaymentExSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCancelRequest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add new cancel transaction request</wsdl:documentation>
+      <wsdl:input message="tns:AddCancelRequestSoapIn" />
+      <wsdl:output message="tns:AddCancelRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCancelRequestEx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add new cancel transaction request. Need comment</wsdl:documentation>
+      <wsdl:input message="tns:AddCancelRequestExSoapIn" />
+      <wsdl:output message="tns:AddCancelRequestExSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Company Info</wsdl:documentation>
+      <wsdl:input message="tns:GetCompanyInfoSoapIn" />
+      <wsdl:output message="tns:GetCompanyInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionReport">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get transaction report of successful payments</wsdl:documentation>
+      <wsdl:input message="tns:GetTransactionReportSoapIn" />
+      <wsdl:output message="tns:GetTransactionReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionReportSummary">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get transaction report summary of successful payments</wsdl:documentation>
+      <wsdl:input message="tns:GetTransactionReportSummarySoapIn" />
+      <wsdl:output message="tns:GetTransactionReportSummarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransaction">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get payment transaction</wsdl:documentation>
+      <wsdl:input message="tns:GetTransactionSoapIn" />
+      <wsdl:output message="tns:GetTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionEx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get payment transaction 2 - not used!!!</wsdl:documentation>
+      <wsdl:input message="tns:GetTransactionExSoapIn" />
+      <wsdl:output message="tns:GetTransactionExSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionByExternal">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get payment transaction by external stan and date: yyyy-MM-ddTHH:mm:ss</wsdl:documentation>
+      <wsdl:input message="tns:GetTransactionByExternalSoapIn" />
+      <wsdl:output message="tns:GetTransactionByExternalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DailyReconciliation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Daily Reconciliation of successful payments</wsdl:documentation>
+      <wsdl:input message="tns:DailyReconciliationSoapIn" />
+      <wsdl:output message="tns:DailyReconciliationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Retransmit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Resend payment transaction</wsdl:documentation>
+      <wsdl:input message="tns:RetransmitSoapIn" />
+      <wsdl:output message="tns:RetransmitSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="OperationsHttpGet">
+    <wsdl:operation name="CheckPayment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Check Your account</wsdl:documentation>
+      <wsdl:input message="tns:CheckPaymentHttpGetIn" />
+      <wsdl:output message="tns:CheckPaymentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecutePayment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Top up Your account</wsdl:documentation>
+      <wsdl:input message="tns:ExecutePaymentHttpGetIn" />
+      <wsdl:output message="tns:ExecutePaymentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecutePaymentEx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Top up Your account</wsdl:documentation>
+      <wsdl:input message="tns:ExecutePaymentExHttpGetIn" />
+      <wsdl:output message="tns:ExecutePaymentExHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCancelRequest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add new cancel transaction request</wsdl:documentation>
+      <wsdl:input message="tns:AddCancelRequestHttpGetIn" />
+      <wsdl:output message="tns:AddCancelRequestHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCancelRequestEx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add new cancel transaction request. Need comment</wsdl:documentation>
+      <wsdl:input message="tns:AddCancelRequestExHttpGetIn" />
+      <wsdl:output message="tns:AddCancelRequestExHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Company Info</wsdl:documentation>
+      <wsdl:input message="tns:GetCompanyInfoHttpGetIn" />
+      <wsdl:output message="tns:GetCompanyInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionReport">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get transaction report of successful payments</wsdl:documentation>
+      <wsdl:input message="tns:GetTransactionReportHttpGetIn" />
+      <wsdl:output message="tns:GetTransactionReportHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionReportSummary">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get transaction report summary of successful payments</wsdl:documentation>
+      <wsdl:input message="tns:GetTransactionReportSummaryHttpGetIn" />
+      <wsdl:output message="tns:GetTransactionReportSummaryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransaction">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get payment transaction</wsdl:documentation>
+      <wsdl:input message="tns:GetTransactionHttpGetIn" />
+      <wsdl:output message="tns:GetTransactionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionEx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get payment transaction 2 - not used!!!</wsdl:documentation>
+      <wsdl:input message="tns:GetTransactionExHttpGetIn" />
+      <wsdl:output message="tns:GetTransactionExHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionByExternal">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get payment transaction by external stan and date: yyyy-MM-ddTHH:mm:ss</wsdl:documentation>
+      <wsdl:input message="tns:GetTransactionByExternalHttpGetIn" />
+      <wsdl:output message="tns:GetTransactionByExternalHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DailyReconciliation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Daily Reconciliation of successful payments</wsdl:documentation>
+      <wsdl:input message="tns:DailyReconciliationHttpGetIn" />
+      <wsdl:output message="tns:DailyReconciliationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Retransmit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Resend payment transaction</wsdl:documentation>
+      <wsdl:input message="tns:RetransmitHttpGetIn" />
+      <wsdl:output message="tns:RetransmitHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="OperationsHttpPost">
+    <wsdl:operation name="CheckPayment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Check Your account</wsdl:documentation>
+      <wsdl:input message="tns:CheckPaymentHttpPostIn" />
+      <wsdl:output message="tns:CheckPaymentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecutePayment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Top up Your account</wsdl:documentation>
+      <wsdl:input message="tns:ExecutePaymentHttpPostIn" />
+      <wsdl:output message="tns:ExecutePaymentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecutePaymentEx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Top up Your account</wsdl:documentation>
+      <wsdl:input message="tns:ExecutePaymentExHttpPostIn" />
+      <wsdl:output message="tns:ExecutePaymentExHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCancelRequest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add new cancel transaction request</wsdl:documentation>
+      <wsdl:input message="tns:AddCancelRequestHttpPostIn" />
+      <wsdl:output message="tns:AddCancelRequestHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCancelRequestEx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add new cancel transaction request. Need comment</wsdl:documentation>
+      <wsdl:input message="tns:AddCancelRequestExHttpPostIn" />
+      <wsdl:output message="tns:AddCancelRequestExHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Company Info</wsdl:documentation>
+      <wsdl:input message="tns:GetCompanyInfoHttpPostIn" />
+      <wsdl:output message="tns:GetCompanyInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionReport">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get transaction report of successful payments</wsdl:documentation>
+      <wsdl:input message="tns:GetTransactionReportHttpPostIn" />
+      <wsdl:output message="tns:GetTransactionReportHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionReportSummary">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get transaction report summary of successful payments</wsdl:documentation>
+      <wsdl:input message="tns:GetTransactionReportSummaryHttpPostIn" />
+      <wsdl:output message="tns:GetTransactionReportSummaryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransaction">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get payment transaction</wsdl:documentation>
+      <wsdl:input message="tns:GetTransactionHttpPostIn" />
+      <wsdl:output message="tns:GetTransactionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionEx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get payment transaction 2 - not used!!!</wsdl:documentation>
+      <wsdl:input message="tns:GetTransactionExHttpPostIn" />
+      <wsdl:output message="tns:GetTransactionExHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionByExternal">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get payment transaction by external stan and date: yyyy-MM-ddTHH:mm:ss</wsdl:documentation>
+      <wsdl:input message="tns:GetTransactionByExternalHttpPostIn" />
+      <wsdl:output message="tns:GetTransactionByExternalHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DailyReconciliation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Daily Reconciliation of successful payments</wsdl:documentation>
+      <wsdl:input message="tns:DailyReconciliationHttpPostIn" />
+      <wsdl:output message="tns:DailyReconciliationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Retransmit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Resend payment transaction</wsdl:documentation>
+      <wsdl:input message="tns:RetransmitHttpPostIn" />
+      <wsdl:output message="tns:RetransmitHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OperationsSoap" type="tns:OperationsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckPayment">
+      <soap:operation soapAction="http://tempuri.org/CheckPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecutePayment">
+      <soap:operation soapAction="http://tempuri.org/ExecutePayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecutePaymentEx">
+      <soap:operation soapAction="http://tempuri.org/ExecutePaymentEx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCancelRequest">
+      <soap:operation soapAction="http://tempuri.org/AddCancelRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCancelRequestEx">
+      <soap:operation soapAction="http://tempuri.org/AddCancelRequestEx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyInfo">
+      <soap:operation soapAction="http://tempuri.org/GetCompanyInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionReport">
+      <soap:operation soapAction="http://tempuri.org/GetTransactionReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionReportSummary">
+      <soap:operation soapAction="http://tempuri.org/GetTransactionReportSummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransaction">
+      <soap:operation soapAction="http://tempuri.org/GetTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionEx">
+      <soap:operation soapAction="http://tempuri.org/GetTransactionEx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionByExternal">
+      <soap:operation soapAction="http://tempuri.org/GetTransactionByExternal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DailyReconciliation">
+      <soap:operation soapAction="http://tempuri.org/DailyReconciliation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Retransmit">
+      <soap:operation soapAction="http://tempuri.org/Retransmit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OperationsSoap12" type="tns:OperationsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckPayment">
+      <soap12:operation soapAction="http://tempuri.org/CheckPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecutePayment">
+      <soap12:operation soapAction="http://tempuri.org/ExecutePayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecutePaymentEx">
+      <soap12:operation soapAction="http://tempuri.org/ExecutePaymentEx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCancelRequest">
+      <soap12:operation soapAction="http://tempuri.org/AddCancelRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCancelRequestEx">
+      <soap12:operation soapAction="http://tempuri.org/AddCancelRequestEx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetCompanyInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionReport">
+      <soap12:operation soapAction="http://tempuri.org/GetTransactionReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionReportSummary">
+      <soap12:operation soapAction="http://tempuri.org/GetTransactionReportSummary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransaction">
+      <soap12:operation soapAction="http://tempuri.org/GetTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionEx">
+      <soap12:operation soapAction="http://tempuri.org/GetTransactionEx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionByExternal">
+      <soap12:operation soapAction="http://tempuri.org/GetTransactionByExternal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DailyReconciliation">
+      <soap12:operation soapAction="http://tempuri.org/DailyReconciliation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Retransmit">
+      <soap12:operation soapAction="http://tempuri.org/Retransmit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OperationsHttpGet" type="tns:OperationsHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="CheckPayment">
+      <http:operation location="/CheckPayment" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecutePayment">
+      <http:operation location="/ExecutePayment" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecutePaymentEx">
+      <http:operation location="/ExecutePaymentEx" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCancelRequest">
+      <http:operation location="/AddCancelRequest" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCancelRequestEx">
+      <http:operation location="/AddCancelRequestEx" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyInfo">
+      <http:operation location="/GetCompanyInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionReport">
+      <http:operation location="/GetTransactionReport" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionReportSummary">
+      <http:operation location="/GetTransactionReportSummary" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransaction">
+      <http:operation location="/GetTransaction" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionEx">
+      <http:operation location="/GetTransactionEx" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionByExternal">
+      <http:operation location="/GetTransactionByExternal" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DailyReconciliation">
+      <http:operation location="/DailyReconciliation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Retransmit">
+      <http:operation location="/Retransmit" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OperationsHttpPost" type="tns:OperationsHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="CheckPayment">
+      <http:operation location="/CheckPayment" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecutePayment">
+      <http:operation location="/ExecutePayment" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecutePaymentEx">
+      <http:operation location="/ExecutePaymentEx" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCancelRequest">
+      <http:operation location="/AddCancelRequest" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCancelRequestEx">
+      <http:operation location="/AddCancelRequestEx" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyInfo">
+      <http:operation location="/GetCompanyInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionReport">
+      <http:operation location="/GetTransactionReport" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionReportSummary">
+      <http:operation location="/GetTransactionReportSummary" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransaction">
+      <http:operation location="/GetTransaction" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionEx">
+      <http:operation location="/GetTransactionEx" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionByExternal">
+      <http:operation location="/GetTransactionByExternal" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DailyReconciliation">
+      <http:operation location="/DailyReconciliation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Retransmit">
+      <http:operation location="/Retransmit" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Operations">
+    <wsdl:port name="OperationsSoap" binding="tns:OperationsSoap">
+      <soap:address location="https://test.paypoint.md:4445/PayPointWS/PayPointMSOperations.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OperationsSoap12" binding="tns:OperationsSoap12">
+      <soap12:address location="https://test.paypoint.md:4445/PayPointWS/PayPointMSOperations.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OperationsHttpGet" binding="tns:OperationsHttpGet">
+      <http:address location="https://test.paypoint.md:4445/PayPointWS/PayPointMSOperations.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OperationsHttpPost" binding="tns:OperationsHttpPost">
+      <http:address location="https://test.paypoint.md:4445/PayPointWS/PayPointMSOperations.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
